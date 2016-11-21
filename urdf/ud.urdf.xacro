@@ -6,7 +6,7 @@
        xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        name="ud" >
 
-  <xacro:include filename="$(find ubiquitous_display)/config/youbot_base_only.urdf.xacro" />
+  <xacro:include filename="$(find ubiquitous_display)/urdf/youbot_base_only.urdf.xacro" />
 
   <!-- Definition of various sizes -->
   <property name="bottom_pillar_height" value="0.2"/>
