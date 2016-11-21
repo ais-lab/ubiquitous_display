@@ -15,8 +15,9 @@
   <property name="pillar_offset_y" value="0.07"/>
   <property name="plate_len_x" value="0.5"/>
   <property name="plate_len_y" value="0.2"/>
+  <property name="plate_len_z" value="0.01"/>
   <property name="hokuyo_offset_x" value="0.25"/>
-  <property name="hokuyo_offset_z" value="0.04"/>
+  <property name="hokuyo_offset_z" value="0.035"/>
 
   <material name="black">
     <color rgba="0 0 0 1"/>
@@ -65,8 +66,9 @@
   <link name="bottom_plate_link">
     <visual>
       <geometry>
-        <box size="${plate_len_x} ${plate_len_y} 0.01"/>
+        <box size="${plate_len_x} ${plate_len_y} ${plate_len_z}"/>
       </geometry>
+      <origin xyz="0 0 -${plate_len_z/2}"/>
       <material name="white"/>
     </visual>
   </link>
@@ -115,8 +117,9 @@
   <link name="top_plate_link">
     <visual>
       <geometry>
-        <box size="${plate_len_x} ${plate_len_y} 0.01"/>
+        <box size="${plate_len_x} ${plate_len_y} ${plate_len_z}"/>
       </geometry>
+      <origin xyz="0 0 -${plate_len_z/2}"/>
       <material name="white"/>
     </visual>
   </link>
