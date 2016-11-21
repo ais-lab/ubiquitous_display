@@ -25,7 +25,7 @@
 
   <!-- Body -->
   <!-- Bottom part -->
-  <link name="bottom_pillars">
+  <link name="bottom_pillars_link">
     <visual>
       <geometry>
         <cylinder length="${bottom_pillar_height}" radius="${pillar_radius}"/>
@@ -55,12 +55,12 @@
       <material name="black"/>
     </visual>
   </link>
-  <joint name="base_to_bottom_pillars" type="fixed">
+  <joint name="base_to_bottom_pillars_joint" type="fixed">
     <parent link="base_link"/>
-    <child link="bottom_pillars"/>
+    <child link="bottom_pillars_link"/>
   </joint>
 
-  <link name="bottom_plate">
+  <link name="bottom_plate_link">
     <visual>
       <geometry>
         <box size="${plate_len_x} ${plate_len_y} 0.01"/>
@@ -68,14 +68,14 @@
       <material name="white"/>
     </visual>
   </link>
-  <joint name="bottom_pillars_to_bottom_plate" type="fixed">
-    <parent link="bottom_pillars"/>
-    <child link="bottom_plate"/>
+  <joint name="bottom_pillars_to_bottom_plate_joint" type="fixed">
+    <parent link="bottom_pillars_link"/>
+    <child link="bottom_plate_link"/>
     <origin xyz="0 0 ${bottom_pillar_height}"/>
   </joint>
 
   <!-- Top part -->
-  <link name="top_pillars">
+  <link name="top_pillars_link">
     <visual>
       <geometry>
         <cylinder length="${top_pillar_height}" radius="${pillar_radius}"/>
@@ -105,12 +105,12 @@
       <material name="black"/>
     </visual>
   </link>
-  <joint name="bottom_plate_to_top_pillars" type="fixed">
-    <parent link="bottom_plate"/>
-    <child link="top_pillars"/>
+  <joint name="bottom_plate_to_top_pillars_joint" type="fixed">
+    <parent link="bottom_plate_link"/>
+    <child link="top_pillars_link"/>
   </joint>
 
-  <link name="top_plate">
+  <link name="top_plate_link">
     <visual>
       <geometry>
         <box size="${plate_len_x} ${plate_len_y} 0.01"/>
@@ -118,9 +118,9 @@
       <material name="white"/>
     </visual>
   </link>
-  <joint name="top_pillars_to_top_plate" type="fixed">
-    <parent link="top_pillars"/>
-    <child link="top_plate"/>
+  <joint name="top_pillars_to_top_plate_joint" type="fixed">
+    <parent link="top_pillars_link"/>
+    <child link="top_plate_link"/>
     <origin xyz="0 0 ${top_pillar_height}"/>
   </joint>
 
