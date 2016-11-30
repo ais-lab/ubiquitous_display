@@ -225,4 +225,9 @@
   <xacro:hokuyo_urg04_laser name="base_laser_front" parent="bottom_plate" ros_topic="base_scan" update_rate="10" min_angle="-1.57" max_angle="1.57">
     <origin xyz="${hokuyo_offset_x} 0 ${hokuyo_offset_z}" rpy="0 0 0"/>
   </xacro:hokuyo_urg04_laser>
+
+  <!-- base laser rear -->
+  <xacro:hokuyo_urg04_laser name="base_laser_rear" parent="bottom_plate" ros_topic="base_scan" update_rate="10" min_angle="-1.57" max_angle="1.57">
+    <origin xyz="-${hokuyo_offset_x} 0 ${hokuyo_offset_z}" rpy="0 0 3.14"/>
+  </xacro:hokuyo_urg04_laser>
 </robot>
