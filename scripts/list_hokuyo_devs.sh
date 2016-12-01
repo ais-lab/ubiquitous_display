@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: list_hokuyo_devs [options]
+# Usage: ./list_hokuyo_devs.sh [options]
 #
 # Options:
 #   -v     Show device name with Hokuyo ID
@@ -13,7 +13,7 @@ if [ $opts == h ] ; then
 fi
 
 for dev in `ls /dev/ttyACM*` ; do
-  id=`timeout 1 rosrun hokuyo_node getID $dev -`
+  id=`timeout 2 rosrun hokuyo_node getID $dev -`
   out_str=$dev
 
   if [ $opts == v ] ; then
