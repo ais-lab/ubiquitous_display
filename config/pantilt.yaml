@@ -8,9 +8,9 @@ pan_controller:
 
     motor:
         id: 3
-        init: 512
+        init: 3072
         min: 0
-        max: 2048
+        max: 4095
 
 tilt_controller:
     controller:
@@ -21,6 +21,6 @@ tilt_controller:
     joint_speed: 2.0
     motor:
         id: 5
-        init: 512
-        min: 0
-        max: 2048
+        init: 2048
+        min: 2389
+        max: 3072
