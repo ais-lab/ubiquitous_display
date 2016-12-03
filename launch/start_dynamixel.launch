@@ -1,0 +1,5 @@
+<launch>
+    <include file="$(find ubiquitous_display)/launch/pantilt_dxl_manager.launch"/>
+    <include file="$(find ubiquitous_display)/launch/pantilt_dxl_controller.launch"/>
+    <include file="$(find ubiquitous_display)/launch/pantilt_dxl_joint_state_publisher.launch"/>
+</launch>
