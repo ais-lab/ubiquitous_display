@@ -164,8 +164,8 @@
       <material name="white"/>
     </visual>
   </link>
-  <joint name="bottom_plate_to_middle_plate_joint" type="fixed">
-    <parent link="bottom_plate_link"/>
+  <joint name="middle_pillars_to_middle_plate_joint" type="fixed">
+    <parent link="middle_pillars_link"/>
     <child link="middle_plate_link"/>
     <origin xyz="0 0 ${middle_pillar_height}"/>
   </joint>
