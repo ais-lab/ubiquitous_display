@@ -1,0 +1,6 @@
+<launch>
+  <arg name="gui" default="false" />
+  <param name="use_gui" value="$(arg gui)"/>  
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ubiquitous_display)/rviz/pantilt.rviz" required="true" />
+</launch>
