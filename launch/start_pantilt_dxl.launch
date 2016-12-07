@@ -1,7 +1,7 @@
 <launch>
-    <include file="$(find ubiquitous_display)/launch/pantilt_dxl_manager.launch"/>
-    <include file="$(find ubiquitous_display)/launch/pantilt_dxl_controller.launch"/>
-    <include file="$(find ubiquitous_display)/launch/pantilt_dxl_joint_state_publisher.launch"/>
+  <include file="$(find ubiquitous_display)/launch/pantilt_dxl_manager.launch"/>
+  <include file="$(find ubiquitous_display)/launch/pantilt_dxl_controller.launch"/>
+  <include file="$(find ubiquitous_display)/launch/pantilt_dxl_joint_state_publisher.launch"/>
   <param name="robot_description" command="$(find xacro)/xacro '$(find ubiquitous_display)/urdf/pantilt.urdf.xacro'"/>
 
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
@@ -9,5 +9,5 @@
   </node>
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
- 
+
 </launch>

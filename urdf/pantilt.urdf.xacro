@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 
 <robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
-       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
-       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
-       xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
-       name="pantilt" >
- 
+  xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+  xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+  xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+  name="pantilt" >
+
   <property name="base_to_box_height" value="0.065"/>
   <property name="box_to_proj_height" value="0.17"/>
- 
+
   <material name="red" >
     <color rgba="0.7 0.0 0.7 1.0" />
   </material>
@@ -21,36 +21,36 @@
   <material name="white" >
     <color rgba="0.7 0.7 0.7 1.0" />
   </material>
-  
+
   <xacro:macro name="pantilt_name" params="name"> 
     <link name="${name}base_link" >
     </link>
     <link name="${name}box_link" >
-     <visual>
-       <origin xyz="0 0 0" rpy="0 0 0" />
-       <geometry>
-         <box size="0.07 0.085 0.065" />
-       </geometry>
-       <material name="red"/>
-     </visual>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.07 0.085 0.065" />
+        </geometry>
+        <material name="red"/>
+      </visual>
     </link>
     <link name="${name}plate_link">
-        <visual>
-       <origin xyz="0 0 0" rpy="0 0 0" />
-       <geometry>
-         <box size="0.35 0.095 0.003" />
-       </geometry>
-       <material name="green"/>
-     </visual>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.35 0.095 0.003" />
+        </geometry>
+        <material name="green"/>
+      </visual>
     </link>
     <link name="${name}projector_link">
-         <visual>
-       <origin xyz="0 0 0" rpy="0 0 0" />
-       <geometry>
-         <box size="0.24 0.17 0.07" />
-       </geometry>
-       <material name="white"/>
-     </visual>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.24 0.17 0.07" />
+        </geometry>
+        <material name="white"/>
+      </visual>
     </link>
 
     <joint name="${name}base_joint" type="fixed">
