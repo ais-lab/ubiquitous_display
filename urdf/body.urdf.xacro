@@ -6,8 +6,6 @@
        xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        name="ud" >
 
-  <!-- <xacro:include filename="$(find ubiquitous_display)/urdf/youbot_base_only.urdf.xacro" /> -->
-
   <!-- Definition of various sizes -->
   <property name="bottom_pillar_height" value="0.1"/>
   <property name="middle_pillar_height" value="0.157"/>
@@ -94,10 +92,6 @@
   <!-- Body -->
   <!-- Bottom part -->
   <xacro:tower_template name="bottom" pillar_height="${bottom_pillar_height}"/>
-  <!-- <joint name="base_to_bottom_pillars_joint" type="fixed"> -->
-  <!--   <parent link="base_link"/>                             -->
-  <!--   <child link="bottom_pillars_link"/>                    -->
-  <!-- </joint>                                                 -->
 
   <!-- Middle part -->
   <xacro:tower_template name="middle" pillar_height="${middle_pillar_height}"/>
@@ -113,25 +107,21 @@
     <child link="top_pillars_link"/>
   </joint>
 
-  <!-- base laser front -->
+  <!-- Laser adjusters -->
+  <!-- Front -->
   <xacro:laser_adjuster_template name="front"/>
   <joint name="front_laser_adjuster_joint" type="fixed">
     <origin xyz="${adjuster_offset_x} 0 0" rpy="0 0 0"/>
     <parent link="bottom_plate_link"/>
     <child link="front_laser_adjuster_link"/>
   </joint>
-  <!-- <xacro:hokuyo_urg04_laser name="base_laser_front" parent="front_laser_adjuster" ros_topic="base_scan" update_rate="10" min_angle="-1.57" max_angle="1.57"> -->
-  <!--   <origin xyz="${hokuyo_offset_x} 0 ${hokuyo_offset_z}" rpy="0 0 0"/>                                                                                      -->
-  <!-- </xacro:hokuyo_urg04_laser>                                                                                                                                -->
 
-  <!-- base laser rear -->
+  <!-- Rear -->
   <xacro:laser_adjuster_template name="rear"/>
   <joint name="rear_laser_adjuster_joint" type="fixed">
   <origin xyz="${-adjuster_offset_x} 0 0" rpy="0 0 3.1415"/>
   <parent link="bottom_plate_link"/>
   <child link="rear_laser_adjuster_link"/>
   </joint>
-  <!-- <xacro:hokuyo_urg04_laser name="base_laser_rear" parent="rear_laser_adjuster" ros_topic="base_scan" update_rate="10" min_angle="-1.57" max_angle="1.57"> -->
-  <!--   <origin xyz="${hokuyo_offset_x} 0 ${hokuyo_offset_z}" rpy="0 0 0"/>                                                                                    -->
-  <!-- </xacro:hokuyo_urg04_laser>                                                                                                                              -->
+
 </robot>
