@@ -14,19 +14,6 @@ rostopic echo /scan
 -->
 
 <launch>
-  <node name="hokuyo" pkg="hokuyo_node" type="hokuyo_node" respawn="false" output="screen">
-  
-    <!-- Starts up faster, but timestamps will be inaccurate. --> 
-    <param name="calibrate_time" type="bool" value="false"/> 
-    
-    <!-- Set the port to connect to here -->
-    <param name="port" type="string" value="/dev/ttyACM0"/> 
-  
-    <param name="intensity" type="bool" value="false"/>
-  </node>
-  
-  
-  <node name="rviz" pkg="rviz" type="rviz" respawn="false" output="screen" args="-d $(find ubiquitous_display)/rviz/hokuyo_demo.rviz"/>
-  
-  
+  <include file="$(find ubiquitous_display)/launch/start_hokuyo.launch"></include>
+  <node name="rviz" pkg="rviz" type="rviz" respawn="false" output="screen" args="-d $(find ubiquitous_display)/rviz/hokuyo_demo.rviz"/>  
 </launch>
