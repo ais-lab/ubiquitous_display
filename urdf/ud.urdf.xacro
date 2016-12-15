@@ -8,6 +8,7 @@
 
   <xacro:include filename="$(find ubiquitous_display)/urdf/youbot_base_only.urdf.xacro" />
   <xacro:include filename="$(find ubiquitous_display)/urdf/body.urdf.xacro" />
+  <xacro:include filename="$(find ubiquitous_display)/urdf/pantilt.urdf.xacro" />
 
   <property name="hokuyo_offset_x" value="-0.05"/>
   <property name="hokuyo_offset_z" value="0.037"/>
@@ -16,6 +17,12 @@
     <ogirin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="bottom_pillars_link"/>
+  </joint>
+
+  <joint name="body_to_pantilt_joint" type="fixed">
+    <ogirin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="top_plate_link"/>
+    <child link="ud_pt_base_link"/>
   </joint>
 
   <!-- base laser front -->
@@ -27,4 +34,5 @@
   <xacro:hokuyo_urg04_laser name="base_laser_rear" parent="rear_laser_adjuster" ros_topic="base_scan" update_rate="10" min_angle="-1.57" max_angle="1.57">
     <origin xyz="${hokuyo_offset_x} 0 ${hokuyo_offset_z}" rpy="0 0 0"/>
   </xacro:hokuyo_urg04_laser>
+
 </robot>
