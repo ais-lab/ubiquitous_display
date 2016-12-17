@@ -13,5 +13,5 @@ rosbridgeを介して、TCPによりyoubotを移動させるデモを実行す�
 パンチルト機構のためのdynamixelの起動に必要なノードをすべて起動する。
 
 
-### pantilt_dxl_display.launch
+### show_pantilt.launch
 パンチルト機構をrvizで表示する。
