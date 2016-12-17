@@ -24,7 +24,7 @@ roslaunch ubiquitous_display show_youbot.launch
 パンチルト機構をrvizで表示する。
 
 #デモ
-### start_youbot_rosgridge_demo.launch
+### demo_youbot_rosgridge.launch
 rosbridgeを介して、TCPによりyoubotを移動させるデモを実行する。作りかけ（操作を入力するスクリプトがまだない）。
 
 
