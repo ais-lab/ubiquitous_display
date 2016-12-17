@@ -21,3 +21,4 @@ fi
 rostopic pub -1 /pan_controller/command std_msgs/Float64 -- $1 &
 sleep 1
 rostopic pub -1 /tilt_controller/command std_msgs/Float64 -- $2
+
