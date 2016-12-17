@@ -9,6 +9,9 @@ demo系はstart系をインクルードすること
 ### start_pantilt_dxl.launch
 パンチルト機構のためのdynamixelの起動に必要なノードをすべて起動する。
 
+### start_hokuyo.launch
+HokuyoのLRFを起動するために必要なノードをすべて起動する
+
 #可視化
 ### show_youbot.launch
 UDのURDF (urdf/ud.urdf.xacro) をrvizで表示する。
