@@ -12,7 +12,7 @@ _EOT_
 exit 1	
 }
 
-#ˆø”‚Ì”Šm”F
+#confirm number of args
 if [ $# -ne 2 ]; then
   usage
   exit 1
