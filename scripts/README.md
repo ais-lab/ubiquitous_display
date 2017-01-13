@@ -1,8 +1,8 @@
 # Scripts
 
-##demo_pantilt_move.sh
+## demo_pantilt_move.sh
 
-## 実行方法
+### 実行方法
 Dynamixelに電源供給し，
 ```
 roslaunch ubiquitous_display start_pantilt_dxl.launch
