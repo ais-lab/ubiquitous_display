@@ -17,7 +17,7 @@ roslaunch ubiquitous_display start_pantilt_dxl.launch
 * パン側の基準位置からの角度(radian) 
 * チルト側の基準位置からの角度(radian)
 
-## 結果
+### 結果
 実世界のDynamixelが指定された位置に移動する．
 
 
