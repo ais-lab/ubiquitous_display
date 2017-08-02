@@ -1,3 +1,10 @@
+### show_ud.launch
+UDのURDF (urdf/ud.urdf.xacro) をrvizで表示する(関節操作GUI付き)。
+
+```
+roslaunch ubiquitous_display show_ud.launch
+```
+
 ### show_youbot.launch
 UDのURDF (urdf/ud.urdf.xacro) をrvizで表示する。
 
